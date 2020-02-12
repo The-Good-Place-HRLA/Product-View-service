@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const Product = require('./');
+const db = require('./index.js');
+const Product = require('./schema.js')
 const seedData = require('./products.json');
 const faker = require('faker');
 

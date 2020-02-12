@@ -1,14 +1,13 @@
 var mongoose = require('mongoose');
-var productSchema = require('./schema.js');
 var mongoURI = 'mongodb://localhost/REIproducts';
-mongoose.Promise = global.Promise;
 
 
-var db = mongoose.connect(mongoURI, { useNewUrlParser: true })
-.then(() => console.log('connected to mongoDB'))
+mongoose.connect(mongoURI, { useNewUrlParser: true })
+// 
 
+var db = mongoose.connection;
 
-var Product = mongoose.model('Product', productSchema)
+db.on('error', console.error.bind(console, 'connection error!'));
+db.once('open', () => console.log('connected!'));
 
-
-module.exports = Product;
+module.exports = db;
