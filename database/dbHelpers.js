@@ -2,15 +2,14 @@ var Product = require('./schema.js');
 var db = require('./index.js')
 
 var helpers = {
+  get: () => Product.find({}),
   getOne: (productId) => Product.find({ productId }),
-  getAll: () => Product.find({}),
 
-  createOne: (product) => Product.create(product),
-  createMany: (products) => Product.insertMany(products),
+  create: (product) => Product.insertMany(product),
 
-  updateOne: (productInfo, updatedProductInfo) => Product.updateOne(productInfo, updatedProductInfo),
+  updateOne: (productId, updatedProductInfo) => Product.updateOne({productId}, updatedProductInfo),
 
-  deleteOne: (productInfo) => Product.deleteOne(productInfo),
+  deleteOne: (productId) => Product.deleteOne({productId}),
   deleteAll: () => Product.deleteMany({}),
 
 }
