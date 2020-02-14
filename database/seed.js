@@ -43,7 +43,7 @@ var before = new Date();
 
 writeTenMillionItems(writeItems, 'utf-8', () => {
   writeItems.end();
-  console.log('created and inserted 10 million results in ' + (new Date() - before))
+  console.log('created 10 million results in ' + (new Date() - before))
 })
 
 
