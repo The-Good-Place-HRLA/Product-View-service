@@ -12,9 +12,7 @@ var productSchema = mongoose.Schema ({
   images: [
     {type: String}
   ],
-  description: [
-    {type: String}
-  ]
+  description: {type: String}
 });
 
 module.exports = mongoose.model('Product', productSchema)
