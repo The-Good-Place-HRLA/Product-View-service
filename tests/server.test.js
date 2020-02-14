@@ -4,7 +4,7 @@ const app = require('../server/index.js');
 const request = supertest(app);
 
 describe('server api', () => {
-    xit('responds to a request for all items', async (done) => {
+    it('responds to a request for all items', async (done) => {
         const response = await request.get('/api');
         expect(response.statusCode).toBe(200);
         done();
@@ -34,7 +34,7 @@ describe('server api', () => {
         done();
     })
 
-    xit('responds to a request to delete all items', async (done) => {
+    it('responds to a request to delete all items', async (done) => {
         const response = await request.delete('/api');
         expect(response.statusCode).toBe(203);
         done();
