@@ -8,7 +8,8 @@
     "start": "nodemon server/server.js",
     "seed": "node database/seed.js",
     "insert": "mongoimport --db=REIproducts --collection=products --type=csv --headerline --file=items.csv",
-    "test": "jest --forceExit"
+    "test": "jest --forceExit",
+    "postgres": "psql postgres"
   },
   "repository": {
     "type": "git",

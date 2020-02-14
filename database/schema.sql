@@ -1,4 +1,7 @@
-psql postgres;
+/*
+Seeding script: open Postgres shell with "psql postgres" then run the below
+*/
+
 
 DROP DATABASE if EXISTS REIproducts;
 CREATE DATABASE REIproducts;
@@ -17,6 +20,5 @@ CREATE TABLE products (
   images TEXT [],
   description VARCHAR (240) NOT NULL
 );
-
 
 COPY products from '/Users/brianprice/Desktop/Coding/Hack_Reactor/Projects/System_Design_Capstone/product-view-service/items.csv' DELIMITER ',' CSV HEADER;
