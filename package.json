@@ -9,6 +9,8 @@
     "seed": "node database/seed.js",
     "insert": "mongoimport --db=REIproducts --collection=products --type=csv --headerline --file=items.csv",
     "test": "jest --forceExit",
+    "postgresInsert": "node database/postgresConnection.js",
+    "postgresTest": "jest tests/postgresSpeed.test.js --forceExit",
     "speed": "jest tests/mongoDBSpeed.test.js --forceExit"
   },
   "repository": {
@@ -48,6 +50,8 @@
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
     "path": "^0.12.7",
+    "pg": "^7.18.1",
+    "postgres": "^1.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-image-magnify": "^2.7.4",
