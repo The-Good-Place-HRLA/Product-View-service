@@ -9,7 +9,8 @@
     "seed": "node database/seed.js",
     "insert": "mongoimport --db=REIproducts --collection=products --type=csv --headerline --file=items.csv",
     "test": "jest --forceExit",
-    "postgresInsert": "node database/postgresConnection.js"
+    "postgresInsert": "node database/postgresConnection.js",
+    "postgresTest": "jest tests/postgresSpeed.test.js --forceExit"
   },
   "repository": {
     "type": "git",
