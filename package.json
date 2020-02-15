@@ -7,11 +7,11 @@
     "build": "webpack -d --watch",
     "start": "nodemon server/server.js",
     "seed": "node database/seed.js",
-    "insert": "mongoimport --db=REIproducts --collection=products --type=csv --headerline --file=items.csv",
-    "test": "jest --forceExit",
-    "postgresInsert": "node database/postgresConnection.js",
-    "postgresTest": "jest tests/postgresSpeed.test.js --forceExit",
-    "speed": "jest tests/mongoDBSpeed.test.js --forceExit"
+    "mongoinsert": "mongoimport --db=REIproducts --collection=products --type=csv --headerline --file=items.csv",
+    "postgresinsert": "node database/postgresConnection.js",
+    "servertest": "jest tests/server.test.js --forceExit",
+    "postgrestest": "jest tests/postgresSpeed.test.js --forceExit",
+    "mongotest": "jest tests/mongoDBSpeed.test.js --forceExit"
   },
   "repository": {
     "type": "git",
