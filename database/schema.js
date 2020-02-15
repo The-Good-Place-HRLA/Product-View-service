@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var productSchema = mongoose.Schema ({
   productId: {type: Number, index: true},
-  name: {type: String},
+  name: {type: String, index: true},
   brand: {type: String},
   item: {type: Number},
   color: {type: String},
