@@ -8,7 +8,8 @@
     "start": "nodemon server/server.js",
     "seed": "node database/seed.js",
     "insert": "mongoimport --db=REIproducts --collection=products --type=csv --headerline --file=items.csv",
-    "test": "jest --forceExit"
+    "test": "jest --forceExit",
+    "speed": "jest tests/mongoDBSpeed.test.js --forceExit"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "jest": "^25.1.0",
+    "jest-cli": "^25.1.0",
     "mongoose": "^5.8.10",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",

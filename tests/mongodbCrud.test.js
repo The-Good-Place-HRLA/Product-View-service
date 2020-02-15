@@ -48,8 +48,7 @@ describe('mongoose database helpers', () => {
 
     it('gets one item from the database', async (done) => {
         const response = await helpers.getOne(0);
-        expect(response.length).toBe(1);
-        expect(response[0].brand).toBe('Rex Specs')
+        expect(response.brand).toBe('Rex Specs')
         done();
     })
 
@@ -86,7 +85,7 @@ describe('mongoose database helpers', () => {
             0, { 'productId': 1 }
         )
         const newResponse = await helpers.getOne(1)
-        expect(newResponse.length).toBe(1)
+        expect(newResponse.productId).toBe(1)
         done();
     })
 
