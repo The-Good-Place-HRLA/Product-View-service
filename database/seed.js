@@ -25,7 +25,7 @@ var writeTenMillionItems = function (writer, encoding, callback) {
       const size = (["XS", "S", "M", "L", "XL"][Math.floor(Math.random() * 5)]);
       const images = [faker.image.imageUrl(),faker.image.imageUrl(),faker.image.imageUrl(),faker.image.imageUrl(),faker.image.imageUrl(),faker.image.imageUrl()];
       const description = `${faker.commerce.productAdjective()} ${faker.commerce.productMaterial()} ${faker.commerce.product()}`;
-      const data = `${productId}, ${name}, ${brand}, ${item}, ${color}, ${rating}, ${price}, ${size}, "{${images}}", ${description}\n`
+      const data = `${productId},${name},${brand},${item},${color},${rating},${price},${size},"{${images}}",${description}\n`
       if (i === 0) {
         writer.write(data, encoding, callback);
       } else {
