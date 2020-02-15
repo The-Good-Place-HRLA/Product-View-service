@@ -3,7 +3,9 @@ var db = require('./index.js')
 
 var helpers = {
   get: () => Product.find({}),
-  getOne: (productId) => Product.find({ productId }),
+  getOne: (productId) => Product.findOne({ productId }),
+  getOnebyName: (name) => Product.findOne({ name }),
+  getAllbyName: (name) => Product.find({ name }),
 
   create: (product) => Product.insertMany(product),
 
