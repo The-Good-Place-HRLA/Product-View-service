@@ -7,14 +7,6 @@ beforeAll(async () => {
     await mongoose.connect(dbURI, { useNewUrlParser: true })
 });
 
-beforeEach(async () => {
-    await helpers.updateOne(9500123, { "name": "TestItem" })
-});
-
-afterEach(async () => {
-    await helpers.updateOne(9500123, { "name": "TestComplete" })
-})
-
 afterAll(async (done) => {
     await mongoose.connection.close();
     done();
@@ -22,25 +14,28 @@ afterAll(async (done) => {
 
 describe('mongoose search query speed', () => {
     it('can find an item by productId from the end of database in under 50ms ', async (done) => {
+        const randomNumber = Math.floor(Math.random() * (10000000 - 9000000) + 9000000);
         const before = new Date();
-        const response = await helpers.getOne(9999999);
-        expect(response.productId).toBe(9999999)
+        const response = await helpers.getOne(randomNumber);
+        expect(response.productId).toBe(randomNumber)
         expect(new Date() - before).toBeLessThanOrEqual(50)
         done();
     });
 
-    it('can find a unique item by a given name in under 50ms ', async (done) => {
+    it('can find the first occurrence of an item by a given name in under 50ms ', async (done) => {
+        const randomProduct = faker.commerce.productName();
         const before = new Date();
-        const response = await helpers.getOnebyName("TestItem");
-        expect(response.name).toBe("TestItem")
+        const response = await helpers.getOnebyName(randomProduct);
+        expect(response.name).toBe(randomProduct)
         expect(new Date() - before).toBeLessThanOrEqual(50)
         done();
     });
 
     it('can find all items by a given name in under 50ms ', async (done) => {
+        const newRandomProduct = faker.commerce.productName();
         const before = new Date();
-        const response = await helpers.getAllbyName("Refined Plastic Sausages");
-        expect(response[0].name).toBe("Refined Plastic Sausages")
+        const response = await helpers.getAllbyName(newRandomProduct);
+        expect(response[0].name).toBe(newRandomProduct)
         expect(new Date() - before).toBeLessThanOrEqual(50)
         done();
     });
