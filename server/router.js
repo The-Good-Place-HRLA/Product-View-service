@@ -2,6 +2,7 @@ const router = require('express').Router();
 const controllers = require('./controllers.js');
 const pgcontrollers = require('./pgcontrollers.js')
 
+// Routes with Mongo
 router
   .route('/api')
   .get(controllers.get)
@@ -22,12 +23,13 @@ router
   .route('/api/getAll/:name')
   .get(controllers.getAllbyName)
 
+  // Routes with Postgres
   router
   .route('/pg/:productId')
   .get(pgcontrollers.getById)
 
   router
-  .route('/pg/:name')
+  .route('/pg/getOne/:name')
   .get(pgcontrollers.getFirstByName)
 
   router
