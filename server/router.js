@@ -13,4 +13,12 @@ router
   .put(controllers.updateOne)
   .delete(controllers.deleteOne)
 
+  router
+  .route('/api/getOne/:name')
+  .get(controllers.getOnebyName)
+
+  router
+  .route('/api/getAll/:name')
+  .get(controllers.getAllbyName)
+
 module.exports = router;

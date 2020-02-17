@@ -16,7 +16,7 @@ npm run seed (to create 10 million records - *note line 28 comment about Postgre
 MONGO
 npm run mongoinsert (to insert 10 million records)
 in Mongo shell, use database REIproducts and collection products
-then 'db.products.createIndex({"productId": 1})'
+then 'db.products.createIndex({"productId": 1}, {"unique": true"})'
 and 'db.products.createIndex({"name": 1})'
 
 POSTGRES
