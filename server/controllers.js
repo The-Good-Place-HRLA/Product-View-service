@@ -14,6 +14,18 @@ const controllers = {
     .catch((err) => res.status(400).send(err))
   },
 
+  getOnebyName: (req, res) => {
+    return helpers.getOnebyName(req.params.name)
+    .then((data) => res.status(200).send(data))
+    .catch((err) => res.status(400).send(err))
+  },
+
+  getAllbyName: (req, res) => {
+    return helpers.getAllbyName(req.params.name)
+    .then((data) => res.status(200).send(data))
+    .catch((err) => res.status(400).send(err))
+  },  
+
   create: (req, res) => {
     return helpers.create(req.body)
     .then((data) => res.status(201).send(data))
