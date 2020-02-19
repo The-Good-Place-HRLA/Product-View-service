@@ -11,7 +11,7 @@ module.exports = {
       'node_modules',
     ],
   
-    moduleFileExtensions: ['js', 'jsx'],
+    moduleFileExtensions: ['js', 'jsx', 'json'],
   
   
     // setupFilesAfterEnv: ['jest-enzyme'],
