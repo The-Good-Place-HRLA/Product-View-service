@@ -84,4 +84,5 @@ var myErrorCounter = new Counter("my_error_counter");
 // };
 
   // To run script from terminal:
+  // uncomment the function for whichever api you want to test
   // k6 run -u numberofVirtualUsers -d 60s --rps RequestsPerSecond tests/k6.js

@@ -1,0 +1,20 @@
+config:
+    target: 'http://localhost:3333'
+    phases:
+      - duration: 60
+        arrivalRate: 500
+    processor: "./artillery-faker.js"
+    defaults:
+      headers:
+        x-my-service-auth: '987401838271002188298567'
+scenarios:
+    - flow:
+      - function: "generateRandomData"
+      - get:
+          # url: "/api/{{ randomNumber }}" // uncomment the line for whichever api you want to test, then artillery run tests/artillery.yml
+          # url: "/api/getOne/{{ name }}"
+          # url: '/api/getAll/{{ name }}'
+          # url: '/pg/{{ randomNumber }}'
+          # url: '/pg/getOne/{{ name }}'
+          # url: '/pg/getAll/{{ name }}'
+  
