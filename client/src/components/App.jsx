@@ -41,9 +41,11 @@ class App extends React.Component {
       axios
       .get(`http://localhost:3333/api/${productId}`)
       .then((res) => {
+        res.data.images = res.data.images[0].replace(/\[/, '').replace(/\]/, '').split(',');
         this.setState({
-          element: res.data[0]
-        }, () => console.log(this.state.element.images))
+          element: res.data
+        }, () => 
+      console.log(this.state))
       })
       .catch(err => console.error(err))
   }
@@ -58,3 +60,10 @@ class App extends React.Component {
 }
 
 export default App;
+
+ //convert images into the correct format
+  // convertImages(images) {
+  //   var imageString = images[0].replace(/\[\]/, '').split(',');
+  //   return imageString.split(',')
+
+  // }
