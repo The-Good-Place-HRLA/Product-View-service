@@ -60,10 +60,3 @@ class App extends React.Component {
 }
 
 export default App;
-
- //convert images into the correct format
-  // convertImages(images) {
-  //   var imageString = images[0].replace(/\[\]/, '').split(',');
-  //   return imageString.split(',')
-
-  // }
