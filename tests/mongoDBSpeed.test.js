@@ -7,9 +7,8 @@ beforeAll(async () => {
     await mongoose.connect(dbURI, { useNewUrlParser: true })
 });
 
-afterAll(async (done) => {
+afterAll(async () => {
     await mongoose.connection.close();
-    done();
 })
 
 describe('mongoose search query speed', () => {
