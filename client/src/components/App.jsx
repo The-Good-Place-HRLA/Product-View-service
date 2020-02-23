@@ -39,9 +39,9 @@ class App extends React.Component {
     //window.location.pathname
     getOne(productId) {
       axios
-      .get(`http://localhost:3333/api/${productId}`)
+      .get(`http://localhost:3333/pg/${productId}`)
       .then((res) => {
-        res.data.images = res.data.images[0].replace(/\[/, '').replace(/\]/, '').split(',');
+// use this line with Mongo arrays  // res.data.images = res.data.images[0].replace(/\[/, '').replace(/\]/, '').split(',');
         this.setState({
           element: res.data
         }, () => 
