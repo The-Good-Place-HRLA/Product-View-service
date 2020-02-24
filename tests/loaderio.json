@@ -1,6 +1,7 @@
 {
  "keys": "name",
- "values": "Rustic Cotton Pants",
+"values": [
+ "Rustic Cotton Pants",
 "Handcrafted Plastic Computer",
 "Handcrafted Rubber Tuna",
 "Handcrafted Frozen Keyboard",
@@ -999,5 +1000,6 @@
 "Sleek Cotton Bike",
 "Unbranded Plastic Bacon",
 "Gorgeous Cotton Bacon",
-"Rustic Rubber Bike",
+"Rustic Rubber Bike"
+ ]
 }
