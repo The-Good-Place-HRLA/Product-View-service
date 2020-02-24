@@ -1,7 +1,6 @@
 {
-"keys": "name",
-"values": [
-"Rustic Cotton Pants"
-]
+  "keys": ["name"] ,
+  "values": [
+    ["steve"]
+  ]
 }
-
