@@ -1,6 +1,9 @@
 {
-  "keys": ["name"] ,
+  "keys": ["username", "password"] ,
   "values": [
-    ["steve"]
+    ["steve", "h4x0R"],
+    ["joe1", "silly"],
+    ["jack", "<3jill"],
+    ["jill", "<3jack"]
   ]
 }
