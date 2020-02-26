@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
@@ -40,11 +41,13 @@ const browserConfig = {
 const serverConfig =  {
   entry: './server/index.js',
   target: "node",
+  externals: [nodeExternals()],
   output: {
-    path: __dirname,
+    path: path.join(__dirname),
     filename: "./server/serverBundle.js",
     libraryTarget: "commonjs2"
   },
+  node: {__dirname: false},
   module: {
     rules: [
       {

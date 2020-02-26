@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      element:'',
+      element: '',
       // productId: window.location.pathname.slice(1,-1)
     };
 

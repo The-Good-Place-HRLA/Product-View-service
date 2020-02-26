@@ -59,6 +59,7 @@
     "react-dom": "^16.12.0",
     "react-image-magnify": "^2.7.4",
     "react-modal": "^3.11.1",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "webpack-node-externals": "^1.7.2"
   }
 }

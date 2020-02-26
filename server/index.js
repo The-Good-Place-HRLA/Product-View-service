@@ -22,19 +22,20 @@ app.use(morgan('dev'));
 
 
 // remember to change path when connecting to proxy
-app.use(express.static('/Users/brianprice/Desktop/Coding/Hack_Reactor/Projects/System_Design_Capstone/Product-View-service/client/dist'));
-app.use(express.static('/Users/brianprice/Desktop/Coding/Hack_Reactor/Projects/System_Design_Capstone/Product-View-service/client/dist'));
+app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
 
 app.use('/pg', router);
-
 
 app.get('/*', (req, res) => {
     const jsx = ( React.createElement('App'));
     const reactDom = ReactDOMServer.renderToString(jsx);
     var responseText = htmlTemplate(reactDom);
+    console.log(responseText)
     // res.writeHead(200, {"Content-Type": "text/html", "Content-Length": responseText.length});
     res.send(responseText)
 });
+
 
 
 function htmlTemplate( reactDom) {
