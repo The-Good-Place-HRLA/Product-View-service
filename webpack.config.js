@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 
-module.exports = {
+const browserConfig = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
     filename: 'KLbundle.js',
@@ -36,3 +36,31 @@ module.exports = {
     extensions: ['.js', '.jsx']
   }
 };
+
+const serverConfig =  {
+  entry: './server/index.js',
+  target: "node",
+  output: {
+    path: __dirname,
+    filename: "./server/serverBundle.js",
+    libraryTarget: "commonjs2"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js[x]?/s,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        options: {
+          presets: ['@babel/preset-react', '@babel/preset-env'],
+          plugins: ["@babel/plugin-proposal-class-properties"]
+        }
+      }
+    ]
+  },
+  plugins: [
+    new webpack.IgnorePlugin(/^pg-native$/)
+  ],
+}
+
+module.exports = [browserConfig, serverConfig]

@@ -25,15 +25,15 @@ router
 
   // Routes with Postgres
   router
-  .route('/pg/:productId')
+  .route('/:productId')
   .get(pgcontrollers.getById)
 
   router
-  .route('/pg/getOne/:name')
+  .route('/getOne/:name')
   .get(pgcontrollers.getFirstByName)
 
   router
-  .route('/pg/getAll/:name')
+  .route('/getAll/:name')
   .get(pgcontrollers.getByName)
 
 module.exports = router;
