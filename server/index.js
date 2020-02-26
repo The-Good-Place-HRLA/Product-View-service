@@ -1,7 +1,7 @@
 // require('newrelic')
 
 const express = require('express');
-const port = 3333;
+const port = 3332;
 const app = express();
 
 const React = require('react');
@@ -22,19 +22,19 @@ app.use(morgan('dev'));
 
 
 // remember to change path when connecting to proxy
-// app.use(express.static(path.join(__dirname, '../client/dist')));
-// app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
+
+app.use('/pg', router);
 
 app.get('/*', (req, res) => {
-    const jsx = React.createElement(App);
+    const jsx = React.createElement(App.default);
     const reactDom = ReactDOMServer.renderToString(jsx);
     var responseText = htmlTemplate(reactDom);
     console.log(responseText)
     // res.writeHead(200, {"Content-Type": "text/html", "Content-Length": responseText.length});
     res.send(responseText)
 });
-
-app.use('/pg', router);
 
 
 function htmlTemplate( reactDom) {
