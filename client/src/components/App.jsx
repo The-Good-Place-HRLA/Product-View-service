@@ -6,7 +6,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      element: '',
+      element: 
+      {"productid":232,"name":"Incredible Frozen Cheese","brand":"Nite Ize","item":67811,"color":"ivory","rating":"0.8","price":"896.00","size":"L","images":["http://lorempixel.com/640/480","http://lorempixel.com/640/480","http://lorempixel.com/640/480","http://lorempixel.com/640/480","http://lorempixel.com/640/480","http://lorempixel.com/640/480"],"description":"Awesome Frozen Keyboard"}
+      ,
       // productId: window.location.pathname.slice(1,-1)
     };
 

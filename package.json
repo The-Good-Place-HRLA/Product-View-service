@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -d --watch",
+    "server": "nodemon server/serverBundle.js",
     "start": "nodemon server/index.js",
     "seed": "node database/seed.js",
     "mongoinsert": "mongoimport --db=REIproducts --collection=products --type=csv --headerline --file=items.csv",
