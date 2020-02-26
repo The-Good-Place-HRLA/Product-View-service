@@ -6,7 +6,7 @@ const app = express();
 
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
-const App = require('../client/src/components/App.jsx');
+const App  = require('../client/src/index.jsx');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -22,13 +22,11 @@ app.use(morgan('dev'));
 
 
 // remember to change path when connecting to proxy
-app.use(express.static(path.join(__dirname, '../client/dist')));
-app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
-
-app.use('/pg', router);
+// app.use(express.static(path.join(__dirname, '../client/dist')));
+// app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/*', (req, res) => {
-    const jsx = ( React.createElement('App'));
+    const jsx = React.createElement(App);
     const reactDom = ReactDOMServer.renderToString(jsx);
     var responseText = htmlTemplate(reactDom);
     console.log(responseText)
@@ -36,6 +34,7 @@ app.get('/*', (req, res) => {
     res.send(responseText)
 });
 
+app.use('/pg', router);
 
 
 function htmlTemplate( reactDom) {
