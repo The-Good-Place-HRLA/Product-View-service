@@ -1,6 +1,7 @@
-require('newrelic')
+// require('newrelic')
 
 const express = require('express');
+const port = 3333;
 const app = express();
 
 const bodyParser = require('body-parser');
@@ -22,4 +23,4 @@ app.use('/', router);
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
 
-module.exports = app;
+app.listen(port, () => console.log(`App listening on port ${port}!`));

@@ -20,9 +20,9 @@ class App extends React.Component {
 
   //pass in an id route
   componentDidMount() {
-    var id = window.location.href.slice(22);
-    if (id === '') { id = 1 }
-    this.getOne(id);
+    // var id = window.location.href.slice(22);
+    // if (id === '') { id = 1 }
+    this.getOne(Math.floor(Math.random() * 100));
   }
 
   // getAll() {
