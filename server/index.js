@@ -6,7 +6,7 @@ const app = express();
 
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
-const App  = require('../client/src/index.jsx');
+const App  = require('../client/src/components/App.jsx');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
