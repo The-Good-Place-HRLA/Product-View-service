@@ -25,7 +25,7 @@ app.use(morgan('dev'));
 
 app.use('/pg', router);
 
-app.get('/hello', (req, res) => {
+app.get('^/$', (req, res) => {
     const jsx = React.createElement(App.default);
     const reactDom = ReactDOMServer.renderToString(jsx);
     var responseText = htmlTemplate(reactDom);
