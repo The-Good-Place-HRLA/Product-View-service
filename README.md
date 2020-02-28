@@ -10,7 +10,7 @@ From within the root directory:
 
 npm install,
 npm run build (webpack),
-npm run start (to start server),
+npm run server (to start server),
 npm run seed (to create 10 million records - *note line 28 comment about Postgres vs. Mongo array format)
 
 MONGO
