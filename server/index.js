@@ -49,7 +49,7 @@ function htmlTemplate( reactDom) {
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="product-view">${ reactDom } </div>
+  <div id="product-view">${ reactDom }</div>
   <script src="KLbundle.js"></script>
 </body>
 </html>`)
