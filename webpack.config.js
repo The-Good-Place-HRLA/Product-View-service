@@ -6,6 +6,7 @@ const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
+  mode: 'production',
   plugins: [
     new BrotliGzipPlugin({
         asset: '[path].br[query]',
