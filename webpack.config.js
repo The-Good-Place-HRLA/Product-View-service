@@ -10,21 +10,21 @@ const browserConfig = {
   mode: 'production',
   plugins: [
     new BrotliGzipPlugin({
-        asset: '[path].br[query]',
-        algorithm: 'brotli',
-        test: /\.(js|css|html|svg)$/,
-        threshold: 10240,
-        minRatio: 0.8,
-        quality: 11
+      asset: '[path].br[query]',
+      algorithm: 'brotli',
+      test: /\.(js|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+      quality: 11
     }),
     new BrotliGzipPlugin({
-        asset: '[path].gz[query]',
-        algorithm: 'gzip',
-        test: /\.(js|css|html|svg)$/,
-        threshold: 10240,
-        minRatio: 0.8
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.(js|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8
     })
-],
+  ],
   entry: `${SRC_DIR}/index.jsx`,
   output: {
     filename: 'KLbundle.js',
@@ -57,7 +57,8 @@ const browserConfig = {
   }
 };
 
-const serverConfig =  {
+const serverConfig = {
+  mode: 'production',
   entry: './server/index.js',
   target: "node",
   externals: [nodeExternals()],
@@ -66,7 +67,7 @@ const serverConfig =  {
     filename: "./server/serverBundle.js",
     libraryTarget: "commonjs2"
   },
-  node: {__dirname: false},
+  node: { __dirname: false },
   module: {
     rules: [
       {
