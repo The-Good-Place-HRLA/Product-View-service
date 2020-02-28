@@ -1,6 +1,7 @@
 // require('newrelic')
 
 const express = require('express');
+const expressStaticGzip = require('express-static-gzip');
 const port = 3333;
 const app = express();
 
@@ -33,8 +34,14 @@ app.get('^/$', (req, res) => {
     res.send(responseText)
 });
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
-app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
+app.use(expressStaticGzip(path.join(__dirname, '../client/dist'), {
+    enableBrotli: true
+   }));
+   app.use('/:id', expressStaticGzip(path.join(__dirname, '../client/dist'), {
+    enableBrotli: true
+   }));
+// app.use(express.static(path.join(__dirname, '../client/dist')));
+// app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
 
 function htmlTemplate( reactDom) {
     return (`<!DOCTYPE html>
