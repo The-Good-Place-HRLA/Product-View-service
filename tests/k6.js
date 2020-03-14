@@ -5,7 +5,12 @@ import faker from "cdnjs.com/libraries/Faker";
 
 var myErrorCounter = new Counter("my_error_counter");
 
+  // UNCOMMENT THE BELOW FUNCTION FOR WHICHEVER FUNCTION YOU WANT TO TEST
+  // THEN FROM THE ROOT DIRECTORY RUN THE BLOW (FILLING IN VIRTUAL USERS AND REQUESTS PER SECOND AS YOU WANT)
+  // k6 run -u numberofVirtualUsers -d 60s --rps RequestsPerSecond tests/k6.js
+
 // Mongo query for product by ID
+
 // export default function () {
 //     var randomNumber = Math.floor(Math.random() * (10000000 - 9000000) + 9000000);
 //     let res = http.get(`http://localhost:3333/api/${randomNumber}`);
@@ -82,7 +87,3 @@ var myErrorCounter = new Counter("my_error_counter");
 //         myErrorCounter.add(1)
 //     }
 // };
-
-  // To run script from terminal:
-  // uncomment the function for whichever api you want to test
-  // k6 run -u numberofVirtualUsers -d 60s --rps RequestsPerSecond tests/k6.js

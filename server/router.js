@@ -2,7 +2,6 @@ const router = require('express').Router();
 const controllers = require('./controllers.js');
 const pgcontrollers = require('./pgcontrollers.js')
 
-// Routes with Mongo
 router
   .route('/api')
   .get(controllers.get)
@@ -15,24 +14,23 @@ router
   .put(controllers.updateOne)
   .delete(controllers.deleteOne)
 
-  router
+router
   .route('/api/getOne/:name')
   .get(controllers.getOnebyName)
 
-  router
+router
   .route('/api/getAll/:name')
   .get(controllers.getAllbyName)
 
-  // Routes with Postgres
-  router
+router
   .route('/:productId')
   .get(pgcontrollers.getById)
 
-  router
+router
   .route('/getOne/:name')
   .get(pgcontrollers.getFirstByName)
 
-  router
+router
   .route('/getAll/:name')
   .get(pgcontrollers.getByName)
 

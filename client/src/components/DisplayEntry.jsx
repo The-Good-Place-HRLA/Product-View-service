@@ -28,7 +28,6 @@ class DisplayEntry extends React.Component {
   }
 
   handleSubmit(e) {
-    // var numberBaby = parseInt(e.target.value);
     e.preventDefault(e);
     this.handleChange(e);
     e.target.reset();

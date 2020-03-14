@@ -11,7 +11,7 @@ scenarios:
     - flow:
       - function: "generateRandomData"
       - get:
-          # url: "/api/{{ randomNumber }}" // uncomment the line for whichever api you want to test, then artillery run tests/artillery.yml
+          # url: "/api/{{ randomNumber }}" // uncomment the line for whichever api you want to test, then from the root directory run: 'artillery run tests/artillery.yml'
           # url: "/api/getOne/{{ name }}"
           # url: '/api/getAll/{{ name }}'
           # url: '/pg/{{ randomNumber }}'

@@ -9,7 +9,6 @@ var ImageMagnify = (props) => {
       <ReactImageMagnify {...{
           smallImage: {
               isFluidWidth: true,
-              // width: "auto",
               src: props.picture,
           },
           

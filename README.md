@@ -5,19 +5,22 @@ https://github.com/The-Good-Place-HRLA/QA-service,
 https://github.com/The-Good-Place-HRLA/header-bar-service,
 https://github.com/The-Good-Place-HRLA/Reviews,
 
-Installing Dependencies
-From within the root directory:
+
+*THIS PROJECT HAS BEEN DEPLOYED ON AWS EC2*
+*IT ALSO EXISTS AS A DOCKER IMAGE: https://hub.docker.com/repository/docker/brprice/sdc*
+
+TO RUN IT ON YOUR LOCAL MACHINE:
 
 npm install,
 npm run build (webpack),
 npm run server (to start server),
-npm run seed (to create 10 million records - *note line 28 comment about Postgres vs. Mongo array format)
+npm run seed (to create a csv file with 10 million records - *note line 28 comment in database/seed.js about Postgres vs. Mongo array format*)
 
-MONGO
+IF YOU'RE USING POSTGRESQL
+npm run postgresinsert (to insert 10 million records)
+
+IF YOU'RE USING MONGODB
 npm run mongoinsert (to insert 10 million records),
 in Mongo shell; use database REIproducts and collection products,
 then 'db.products.createIndex({"productId": 1}, {"unique": true"})',
 and 'db.products.createIndex({"name": 1})',
-
-POSTGRES
-npm run postgresinsert (to insert 10 million records)

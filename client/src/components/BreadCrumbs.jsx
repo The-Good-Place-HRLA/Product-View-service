@@ -1,7 +1,5 @@
 import React from 'react';
 
-//Real breadcrumbs would be to add an array of breadcrumbs to database
-//{this.props.element.breadcrumbs.map(breadcrumb   etc etc. No time.
 class BreadCrumbs extends React.Component {
   constructor(props) {
     super(props);

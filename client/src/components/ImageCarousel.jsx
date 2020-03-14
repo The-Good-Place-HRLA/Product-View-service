@@ -19,7 +19,6 @@ class ImageCarousel extends React.Component {
       description: e.target.alt,
       description2: e.target.id
     })
-    console.log(this.state.description2)
   }
 
   render() {
